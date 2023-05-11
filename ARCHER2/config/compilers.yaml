@@ -1,0 +1,56 @@
+#
+# Compiler config to use underlying compiler commands rather than Cray 
+# compiler wrappers
+#
+# Based on NERSC configuration provided by Steve Leak
+#
+
+
+# Note the double colon here is intentional to ensure any default underlying
+# configuration is ignored
+compilers::
+- compiler:
+    spec: gcc@11.2.0
+    paths:
+      cc: /opt/cray/pe/gcc/11.2.0/bin/gcc
+      cxx: /opt/cray/pe/gcc/11.2.0/bin/g++
+      f77: /opt/cray/pe/gcc/11.2.0/bin/gfortran
+      fc: /opt/cray/pe/gcc/11.2.0/bin/gfortran
+    flags:
+      cflags: -march=znver2
+      cxxflags: -march=znver2
+      fflags: -march=znver2
+    operating_system: sles15
+    target: any
+    modules: []
+    extra_rpaths: []
+- compiler:
+    spec: aocc@3.2.0
+    paths:
+      cc: /opt/AMD/aocc-compiler-3.2.0/bin/clang
+      cxx: /opt/AMD/aocc-compiler-3.2.0/bin/clang++
+      f77: /opt/AMD/aocc-compiler-3.2.0/bin/flang
+      fc: /opt/AMD/aocc-compiler-3.2.0/bin/flang
+    flags:
+      cflags: -march=znver2
+      cxxflags: -march=znver2
+      fflags: -march=znver2
+    operating_system: sles15
+    target: any
+    modules: []
+    extra_rpaths: []
+- compiler:
+    spec: cce@15.0.0
+    paths:
+      cc: /opt/cray/pe/cce/15.0.0/bin/craycc
+      cxx: /opt/cray/pe/cce/15.0.0/bin/craycxx
+      f77: /opt/cray/pe/cce/15.0.0/bin/crayftn
+      fc: /opt/cray/pe/cce/15.0.0/bin/crayftn
+    flags:
+      cflags: -march=zen2
+      cxxflags: -march=zen2
+      fflags: -march=zen2
+    operating_system: sles15
+    target: any
+    modules: []
+    extra_rpaths: []
