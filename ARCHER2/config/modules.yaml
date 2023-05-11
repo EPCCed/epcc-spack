@@ -1,0 +1,20 @@
+modules:
+  default:
+    enable::
+      - lmod
+    lmod:
+      core_compilers:
+      - 'gcc@7.5.0'
+      hierarchy:
+      - mpi
+      hash_length: 0
+      include:
+      - gcc
+      exclude:
+      - '%gcc@7.5.0'
+      all:
+        environment:
+          set:
+            '{name}_ROOT': '{prefix}'
+      projections:
+        all:          '{name}/{version}'

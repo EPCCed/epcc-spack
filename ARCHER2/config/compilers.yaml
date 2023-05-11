@@ -1,14 +1,16 @@
-#
-# Compiler config to use underlying compiler commands rather than Cray 
-# compiler wrappers
-#
-# Based on NERSC configuration provided by Steve Leak
-#
-
-
-# Note the double colon here is intentional to ensure any default underlying
-# configuration is ignored
 compilers::
+- compiler:
+    spec: gcc@7.5.0
+    paths:
+      cc: /usr/bin/gcc
+      cxx: /usr/bin/g++
+      f77: /usr/bin/gfortran
+      fc: /usr/bin/gfortran
+    flags: {}
+    operating_system: sles15
+    target: any
+    modules: []
+    extra_rpaths: []
 - compiler:
     spec: gcc@11.2.0
     paths:
