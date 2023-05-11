@@ -539,7 +539,7 @@ packages:
       - cray-mpich/8.1.23
       - craype-network-ofi
       prefix: /opt/cray/pe/mpich/8.1.23/ofi/cray/10.0
-    - spec: cray-mpich@8.1.19%aocc
+    - spec: cray-mpich@8.1.23%aocc
       modules:
       - cray-mpich/8.1.23
       - craype-network-ofi
@@ -562,11 +562,6 @@ packages:
     buildable: false
   cray-fftw:
     externals:
-    - spec: cray-fftw@3.3.10.3 target=zen2
-      modules:
-      - craype-x86-rome
-      - cray-fftw/3.3.10.3
-      prefix: /opt/cray/pe/fftw/3.3.10.3/x86_rome
     - spec: cray-fftw@3.3.10.3 target=zen2
       modules:
       - craype-x86-rome
