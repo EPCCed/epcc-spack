@@ -13,7 +13,7 @@ compilers::
     extra_rpaths: []
 - compiler:
     spec: gcc@9.3.0
-      paths:
+    paths:
       cc: /mnt/lustre/tursafs1/apps/gcc/9.3.0/bin/gcc
       cxx: /mnt/lustre/tursafs1/apps/gcc/9.3.0/bin/g++
       f77: /mnt/lustre/tursafs1/apps/gcc/9.3.0/bin/gfortran
