@@ -1,0 +1,72 @@
+packages:
+  all:
+  # note the compiler and providers specifications
+  # only suggest a priority order, they do not exclude other options
+  # suggested priority for compilers.
+    compiler: [ gcc@9.3.0 ]
+    providers:
+      mpi: [ openmpi@4.1.1 ]
+    permissions:
+      read: world
+      write: user
+
+# Do not build virtuals with an external provider
+  mpi:
+    buildable: false
+
+# Preinstalled packages
+  autoconf:
+    externals:
+    - spec: autoconf@2.69
+      prefix: /usr
+  automake:
+    externals:
+    - spec: automake@1.16.1
+      prefix: /usr
+  cuda:
+    buildable: false
+    externals:
+    - spec: cuda@11.0.2
+      prefix: /mnt/lustre/tursafs1/apps/cuda/11.0.2
+    - spec: cuda@11.0.3
+      prefix: /mnt/lustre/tursafs1/apps/cuda/11.0.3
+    - spec: cuda@11.4.1
+      prefix: /mnt/lustre/tursafs1/apps/cuda/11.4.1
+  diffutils:
+    externals:
+    - spec: diffutils@3.6
+      prefix: /usr
+  gettext:
+    externals:
+    - spec: gettext@0.19.8.1
+      prefix: /usr
+  libtool:
+    externals:
+    - spec: libtool@2.4.6
+      prefix: /usr
+  m4:
+    externals:
+    - spec: m4@1.4.18
+      prefix: /usr
+  ncurses:
+    externals:
+    - spec: ncurses@6.1.20180224+termlib abi=6
+      prefix: /usr
+  openmpi:
+    buildable: false
+    externals:
+    - spec: openmpi@4.1.1%gcc@9.3.0+cuda~cxx~cxx_exceptions~java~memchecker+pmi~sqlite3~static~thread_multiple~wrapper-rpath
+        fabrics=ucx schedulers=slurm
+      prefix: /mnt/lustre/tursafs1/apps/basestack/cuda-11.4/openmpi/4.1.1-cuda11.4
+  perl:
+    externals:
+    - spec: perl@5.26.3~cpanm~open+shared+threads
+      prefix: /usr
+  tar:
+    externals:
+    - spec: tar@1.30
+      prefix: /usr
+  xz:
+    externals:
+    - spec: xz@5.2.4
+      prefix: /usr
